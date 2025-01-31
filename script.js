@@ -1,3 +1,6 @@
+// Definindo a versão
+document.getElementById('version').textContent = '1.0.0';  // Aqui você pode atualizar a versão quando necessário
+
 let total = 0;
 
 function addItem() {
