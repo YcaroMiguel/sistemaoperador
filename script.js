@@ -8,6 +8,16 @@ function addItem() {
         const itemList = document.getElementById('items');
         const li = document.createElement('li');
         li.textContent = `${itemName} - $${itemPrice.toFixed(2)}`;
+
+        // Create remove button
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.classList.add('remove-item');
+        removeButton.onclick = function() {
+            removeItem(itemPrice, li);
+        };
+
+        li.appendChild(removeButton);
         itemList.appendChild(li);
 
         total += itemPrice;
@@ -17,8 +27,16 @@ function addItem() {
         document.getElementById('itemName').value = '';
         document.getElementById('itemPrice').value = '';
     } else {
-        alert('Por favor, insira um nome válido para o item e um preço válido.');
+        alert('Please enter a valid item name and price.');
     }
+}
+
+function removeItem(itemPrice, li) {
+    total -= itemPrice;
+    document.getElementById('totalAmount').textContent = total.toFixed(2);
+
+    // Remove item from the list
+    li.remove();
 }
 
 function calculateChange() {
@@ -28,8 +46,8 @@ function calculateChange() {
         const change = payment - total;
         document.getElementById('change').textContent = change.toFixed(2);
     } else if (payment < total) {
-        alert('O valor pago não é suficiente para cobrir o total.');
+        alert('The payment is not enough to cover the total.');
     } else {
-        alert('Por favor, insira um valor de pagamento válido.');
+        alert('Please enter a valid payment amount.');
     }
 }
