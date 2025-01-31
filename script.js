@@ -1,5 +1,5 @@
 // Definindo a versão
-document.getElementById('version').textContent = '1.0.1';  // Aqui você pode atualizar a versão quando necessário
+document.getElementById('version').textContent = '1.1.0';  // Aqui você pode atualizar a versão quando necessário
 
 let total = 0;
 
