@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Caixa</title>
+    <title>Cash Register System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Caixa Registradora</h1>
+        <h1>Cash Register</h1>
         
         <div class="input-section">
-            <input type="text" id="itemName" placeholder="Nome do item" />
-            <input type="number" id="itemPrice" placeholder="Preço do item" />
-            <button onclick="addItem()">Adicionar Item</button>
+            <input type="text" id="itemName" placeholder="Item name" />
+            <input type="number" id="itemPrice" placeholder="Item price" />
+            <button onclick="addItem()">Add Item</button>
         </div>
 
         <div class="items-list">
-            <h2>Itens</h2>
+            <h2>Items</h2>
             <ul id="items"></ul>
         </div>
 
         <div class="total">
             <p>Total: $<span id="totalAmount">0</span></p>
-            <input type="number" id="payment" placeholder="Pagamento" />
-            <button onclick="calculateChange()">Calcular Troco</button>
-            <p>Troco: $<span id="change">0</span></p>
+            <input type="number" id="payment" placeholder="Payment" />
+            <button onclick="calculateChange()">Calculate Change</button>
+            <p>Change: $<span id="change">0</span></p>
         </div>
     </div>
 
