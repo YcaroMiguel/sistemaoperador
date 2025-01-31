@@ -9,7 +9,7 @@ function addItem() {
         const li = document.createElement('li');
         li.textContent = `${itemName} - $${itemPrice.toFixed(2)}`;
 
-        // Create remove button
+        // Criando o botão de remover
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Remove';
         removeButton.classList.add('remove-item');
@@ -23,7 +23,7 @@ function addItem() {
         total += itemPrice;
         document.getElementById('totalAmount').textContent = total.toFixed(2);
 
-        // Clear inputs
+        // Limpar os campos de entrada
         document.getElementById('itemName').value = '';
         document.getElementById('itemPrice').value = '';
     } else {
@@ -35,7 +35,7 @@ function removeItem(itemPrice, li) {
     total -= itemPrice;
     document.getElementById('totalAmount').textContent = total.toFixed(2);
 
-    // Remove item from the list
+    // Remover o item da lista
     li.remove();
 }
 
