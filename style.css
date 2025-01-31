@@ -101,6 +101,11 @@ li {
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+li span {
+    color: #333; /* A cor do texto dos itens foi alterada para ser mais visível */
+    font-weight: bold;
+}
+
 .remove-item {
     background-color: #ff4d4d;
     color: white;
@@ -124,12 +129,26 @@ li {
     margin-bottom: 20px;
 }
 
+#totalAmount {
+    color: #0077b6; /* Tornar o total mais visível com cor contrastante */
+    font-weight: bold;
+}
+
 input#payment {
     width: 70%;
 }
 
 #change {
     font-weight: bold;
+    color: #ff4d4d; /* A cor do troco foi alterada para um tom que chame mais atenção */
+}
+
+input#payment {
+    width: 70%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
 }
 
 @media (max-width: 600px) {
