@@ -15,6 +15,12 @@ body {
     color: #fff;
 }
 
+.sentences {
+    font-family: 'Arial', 'sans-serif';
+    background: #ff5a03;
+    color: #000;
+}
+
 .container {
     background-color: #fff;
     border-radius: 15px;
