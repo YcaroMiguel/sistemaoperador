@@ -35,6 +35,18 @@
     </div>
 
     <div class="mt-6">
+        <h2 class="text-xl font-bold">Card Payment Machine:</h2>
+        <button type="button" onclick="processCardPayment()" class="w-full bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600">Pay with Card</button>
+        <p id="cardMessage" class="font-bold text-green-600 mt-2"></p>
+    </div>
+
+    <div id="receipt" class="mt-6 hidden bg-gray-100 p-4 rounded-lg shadow">
+        <h2 class="text-xl font-bold text-center">Receipt</h2>
+        <div id="receiptContent" class="mt-4"></div>
+        <p class="font-bold mt-4 text-center">Thank You!</p>
+    </div>
+
+    <div class="mt-6">
         <h2 class="text-xl font-bold">Useful Shopping Phrases:</h2>
         <ul class="list-disc pl-5 space-y-2">
             <li>"How much does this cost?"</li>
@@ -76,9 +88,31 @@
         if (!isNaN(amountPaid) && amountPaid >= total) {
             const change = amountPaid - total;
             changeAmount.textContent = change.toFixed(2);
+            generateReceipt("Cash", amountPaid, change);
         } else {
             alert("Please enter a valid amount that is greater than or equal to the total.");
         }
+    }
+
+    function processCardPayment() {
+        if (total > 0) {
+            document.getElementById("cardMessage").textContent = `Payment of $${total.toFixed(2)} completed successfully!`;
+            generateReceipt("Card", total, 0);
+        } else {
+            alert("Please add products before making a card payment.");
+        }
+    }
+
+    function generateReceipt(paymentMethod, amountPaid, change) {
+        const receipt = document.getElementById("receipt");
+        const receiptContent = document.getElementById("receiptContent");
+        receiptContent.innerHTML = `
+            <p><strong>Payment Method:</strong> ${paymentMethod}</p>
+            <p><strong>Total:</strong> $${total.toFixed(2)}</p>
+            <p><strong>Amount Paid:</strong> $${amountPaid.toFixed(2)}</p>
+            <p><strong>Change:</strong> $${change.toFixed(2)}</p>
+        `;
+        receipt.classList.remove("hidden");
     }
 </script>
 </body>
